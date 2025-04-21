@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shekinah Feranil - ITEC 101 Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="../images/linkpic.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <div class="logo">SHEKINAH</div>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="../quizzes/quizzes.html">QUIZZES</a></li>
+        <li><a href="../projects/projects.html">PROJECTS</a></li>
+      </ul>
+    </nav>
+
+    <section class="about-section" id="about">
+      <h2>ABOUT ME</h2>
+
+      <div class="about-card">
+        <img src="../images/about pic.jpg" alt="my pic" class="profile-img" />
+        <div class="about-title">IT Student 🤝 Future House Wife</div>
+        <p class="about-text">
+          Hey! I'm Shekinah A. Feranil – 21 years old, passionate, and currently
+          navigating life as a third-year IT student and part-time photographer.
+          I'm obsessed with capturing moments, gaming, and spontaneous
+          adventures. Whether I'm coding something cool or chasing sunsets, I'm
+          all about learning, growing, and making the most of every moment.
+        </p>
+      </div>
+    </section>
+
+    <div class="photogallery">
+      <div class="photography">
+        <h2 class="most">MY PHOTOGRAPHY GALLERY</h2>
+        <br />
+        <div class="posts-container">
+          <div class="post">
+            <img
+              src="../images/baguio.jpg"
+              alt="baguiostreetpic"
+              onclick="openLightbox(this.src)"
+            />
+            <p>
+              Taken in Baguio – showcasing a scenic road in the City of Pines.
+            </p>
+          </div>
+          <div class="post">
+            <img
+              src="../images/islands.jpg"
+              alt="baguioisles"
+              onclick="openLightbox(this.src)"
+            />
+            <p>Soft moments in Baguio — where charm meets chill.</p>
+          </div>
+          <div class="post">
+            <img
+              src="../images/cove.jpg"
+              alt="batangascove"
+              onclick="openLightbox(this.src)"
+            />
+            <p>Snapped in Nasugbu, Batangas – pure nature vibes!</p>
+          </div>
+          <div class="post">
+            <img
+              src="../images/boat.jpg"
+              alt="boatpic"
+              onclick="openLightbox(this.src)"
+            />
+            <p>Snapped in Quezon – ocean views hitting different!</p>
+          </div>
+          <div class="post">
+            <img
+              src="../images/beach.jpg"
+              alt="beachpic"
+              onclick="openLightbox(this.src)"
+            />
+            <p>Captured in Batangas – clear waters and good vibes!</p>
+          </div>
+          <div class="post">
+            <img
+              src="../images/narcissos.jpg"
+              alt="narcisso's restaurant"
+              onclick="openLightbox(this.src)"
+            />
+            <p>Taken in Silang, Cavite – sunset vibes at Narcisso's!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="contact" id="contact">
+      <div class="titlereveal">
+        <center><h2 class="section-title">CONTACT ME</h2></center>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="card reveal">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info">
+              <h3>Address</h3>
+              <span
+                >333, Karangalan St., Buenavista III, General Trias,
+                Cavite</span
+              >
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info">
+              <h3>Phone</h3>
+              <span>+63 9915734363</span>
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="info">
+              <h3>GitHub</h3>
+              <span>github.com/kaixn011</span>
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="contact-icon">
+              <i class="fa fa-envelope"></i>
+            </div>
+            <div class="info">
+              <h3>Email</h3>
+              <span>Shekinah.feranil011@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>CONNECT WITH ME</h3>
+        <div class="footer-icons">
+          <a href="mailto:Shekinah.feranil011@gmail.com" target="_blank">
+            <i class="fas fa-envelope"></i>
+            <p>Email</p>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kaixn-kaii-02a275361/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+            <p>LinkedIn</p>
+          </a>
+          <a href="https://github.com/kaixn011" target="_blank">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Shekinah Feranil. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger menu functionality
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector("nav ul");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+
+      // Close menu when clicking on a nav link
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+        });
+      });
+
+      let prevScrollPos = window.pageYOffset;
+
+      window.onscroll = function () {
+        const currentScrollPos = window.pageYOffset;
+        const nav = document.querySelector("nav");
+
+        if (prevScrollPos > currentScrollPos) {
+          nav.classList.remove("hide-navbar");
+        } else {
+          nav.classList.add("hide-navbar");
+        }
+
+        prevScrollPos = currentScrollPos;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shekinah Feranil - ITEC 101 Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/linkpic.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-no-logo">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about/about.html">ABOUT</a></li>
+        <li><a href="quizzes/quizzes.html">QUIZZES</a></li>
+        <li><a href="projects/projects.html">PROJECTS</a></li>
+      </ul>
+    </nav>
+
+    <div class="home" id="home">
+      <div class="profile-section">
+        <div class="profile-container">
+          <img
+            src="images/homeme.png"
+            alt="Portrait of Shekinah Feranil"
+            class="portrait-image"
+          />
+          <img src="images/sandbg.png" alt="Sand background" class="sand-bg" />
+        </div>
+        <div class="intro-text">
+          <h1 id="greeting-text">Hi!</h1>
+          <h2>I'm Shekinah Feranil</h2>
+          <img src="images/line.png" alt="line art" class="line-art" />
+          <p>and this is My Web Portfolio for ITEC 101!</p>
+          <a href="about.html" class="about-button">ABOUT</a>
+        </div>
+      </div>
+      <div class="social-links">
+        <a
+          href="https://www.facebook.com/shekinah.feranil.9/"
+          target="_blank"
+          class="social-icon"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/http.kaixn/"
+          target="_blank"
+          class="social-icon"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://discord.gg/valorantph"
+          target="_blank"
+          class="social-icon"
+        >
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="mailto:Shekinah.feranil011@gmail.com" class="social-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>CONNECT WITH ME</h3>
+        <div class="footer-icons">
+          <a href="mailto:Shekinah.feranil011@gmail.com" target="_blank">
+            <i class="fas fa-envelope"></i>
+            <p>Email</p>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kaixn-kaii-02a275361/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+            <p>LinkedIn</p>
+          </a>
+          <a href="https://github.com/kaixn011" target="_blank">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Shekinah Feranil. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const greetings = ["Hi!", "Hola!", "Ciao!"];
+      const greetingElement = document.getElementById("greeting-text");
+      let greetingIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function typeGreeting() {
+        const currentGreeting = greetings[greetingIndex];
+        let displayText = currentGreeting.substring(0, charIndex);
+
+        greetingElement.textContent = displayText;
+
+        if (!isDeleting && charIndex < currentGreeting.length) {
+          charIndex++;
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+        }
+
+        if (charIndex === currentGreeting.length && !isDeleting) {
+          // Wait a bit before deleting
+          isDeleting = true;
+          setTimeout(typeGreeting, 800);
+          return;
+        }
+
+        if (charIndex === 0 && isDeleting) {
+          // Move to next greeting
+          isDeleting = false;
+          greetingIndex = (greetingIndex + 1) % greetings.length;
+        }
+
+        setTimeout(typeGreeting, isDeleting ? 500 : 250); // speed: faster when deleting
+      }
+
+      // Start typing on load
+      typeGreeting();
+    </script>
+    <script>
+      // Hamburger menu functionality
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector("nav ul");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+
+      // Close menu when clicking on a nav link
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+        });
+      });
+
+      let prevScrollPos = window.pageYOffset;
+
+      window.onscroll = function () {
+        const currentScrollPos = window.pageYOffset;
+        const nav = document.querySelector("nav");
+
+        if (prevScrollPos > currentScrollPos) {
+          nav.classList.remove("hide-navbar");
+        } else {
+          nav.classList.add("hide-navbar");
+        }
+
+        prevScrollPos = currentScrollPos;
+      };
+    </script>
+  </body>
+</html>

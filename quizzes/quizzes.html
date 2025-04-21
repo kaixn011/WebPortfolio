@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shekinah Feranil - ITEC 101 Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="../images/linkpic.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <div class="logo">SHEKINAH</div>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../about/about.html">ABOUT</a></li>
+        <li><a href="quizzes.html">QUIZZES</a></li>
+        <li><a href="../projects/projects.html">PROJECTS</a></li>
+      </ul>
+    </nav>
+
+    <section class="about-section">
+      <h2>MY QUIZZES</h2>
+      <h3 class="quiz-subtitle">PRE-TESTS</h3>
+      <div class="subtitle-line"></div>
+
+      <div class="quiz-grid">
+        <div class="quiz-card">
+          <div class="quiz-title">PRE-TEST 1</div>
+          <img
+            src="../images/PT1.png"
+            alt="Pretest1"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">PRE-TEST 2</div>
+          <img
+            src="../images/PT2.png"
+            alt="Pretest2"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">PRE-TEST 3</div>
+          <img
+            src="../images/PT3.png"
+            alt="Pretest3"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">PRE-TEST 4</div>
+          <img
+            src="../images/PT4.png"
+            alt="Pretest4"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">PRE-TEST 5</div>
+          <img
+            src="../images/PT5.png"
+            alt="Pretest5"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+      </div>
+
+      <h3 class="quiz-subtitle">POST-TESTS</h3>
+      <div class="subtitle-line"></div>
+
+      <div class="quiz-grid">
+        <div class="quiz-card">
+          <div class="quiz-title">POST-TEST 1</div>
+          <img
+            src="../images/catmeme.jfif"
+            alt="Pretest1"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">POST-TEST 2</div>
+          <img
+            src="../images/catmeme.jfif"
+            alt="Pretest2"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">POST-TEST 3</div>
+          <img
+            src="../images/catmeme.jfif"
+            alt="Pretest3"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">POST-TEST 4</div>
+          <img
+            src="../images/catmeme.jfif"
+            alt="Pretest4"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-title">POST-TEST 5</div>
+          <img
+            src="../images/catmeme.jfif"
+            alt="Pretest5"
+            class="quiz-image"
+            onclick="openLightbox(this.src)"
+          />
+          <div class="score-line"></div>
+          <div class="score">Score: 20/20</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-content">
+        <button class="close-lightbox" onclick="closeLightbox()">
+          <i class="fas fa-times"></i>
+        </button>
+        <img
+          src=""
+          alt="Enlarged quiz"
+          class="lightbox-image"
+          id="lightbox-image"
+          onclick="event.stopPropagation()"
+        />
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>CONNECT WITH ME</h3>
+        <div class="footer-icons">
+          <a href="mailto:Shekinah.feranil011@gmail.com" target="_blank">
+            <i class="fas fa-envelope"></i>
+            <p>Email</p>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kaixn-kaii-02a275361/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+            <p>LinkedIn</p>
+          </a>
+          <a href="https://github.com/kaixn011" target="_blank">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Shekinah Feranil. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger menu functionality
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector("nav ul");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+
+      // Close menu when clicking on a nav link
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+        });
+      });
+
+      let prevScrollPos = window.pageYOffset;
+
+      window.onscroll = function () {
+        const currentScrollPos = window.pageYOffset;
+        const nav = document.querySelector("nav");
+
+        if (prevScrollPos > currentScrollPos) {
+          nav.classList.remove("hide-navbar");
+        } else {
+          nav.classList.add("hide-navbar");
+        }
+
+        prevScrollPos = currentScrollPos;
+      };
+
+      // Lightbox functionality
+      function openLightbox(imageSrc) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        lightboxImage.src = imageSrc;
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent scrolling when lightbox is open
+      }
+
+      function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.classList.remove("active");
+        document.body.style.overflow = ""; // Restore scrolling
+      }
+
+      // Close lightbox with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+      });
+    </script>
+  </body>
+</html>
