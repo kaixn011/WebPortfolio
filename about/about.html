@@ -41,8 +41,21 @@
           adventures. Whether I'm coding something cool or chasing sunsets, I'm
           all about learning, growing, and making the most of every moment.
         </p>
+        <button class="resume-btn" onclick="openResume()">View Resume</button>
       </div>
     </section>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeResume()">&times;</button>
+        <img
+          src="../images/Resume(Feranil).jpg"
+          alt="Resume"
+          class="resume-img"
+        />
+      </div>
+    </div>
 
     <div class="photogallery">
       <div class="photography">
@@ -100,6 +113,21 @@
             <p>Taken in Silang, Cavite – sunset vibes at Narcisso's!</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Lightbox for Photogallery -->
+    <div id="photoLightbox" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closePhotoLightbox()">
+          &times;
+        </button>
+        <img
+          src=""
+          alt="Expanded photo"
+          class="resume-img"
+          id="lightboxImage"
+        />
       </div>
     </div>
 
@@ -193,6 +221,40 @@
           nav.classList.remove("active");
         });
       });
+
+      // Resume Modal Functions
+      function openResume() {
+        document.getElementById("resumeModal").style.display = "flex";
+      }
+
+      function closeResume() {
+        document.getElementById("resumeModal").style.display = "none";
+      }
+
+      // Photo Lightbox Functions
+      function openLightbox(imageSrc) {
+        const lightbox = document.getElementById("photoLightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        lightboxImage.src = imageSrc;
+        lightbox.style.display = "flex";
+      }
+
+      function closePhotoLightbox() {
+        document.getElementById("photoLightbox").style.display = "none";
+      }
+
+      // Close modals when clicking outside
+      window.onclick = function (event) {
+        const resumeModal = document.getElementById("resumeModal");
+        const photoLightbox = document.getElementById("photoLightbox");
+
+        if (event.target == resumeModal) {
+          resumeModal.style.display = "none";
+        }
+        if (event.target == photoLightbox) {
+          photoLightbox.style.display = "none";
+        }
+      };
 
       let prevScrollPos = window.pageYOffset;
 

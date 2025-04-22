@@ -28,6 +28,62 @@
       </ul>
     </nav>
 
+    <section class="about-section">
+      <h2>MY PROJECTS</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>PROJECT 1</h3>
+          <p>This portfolio website showcasing my projects in ITEC 101.</p>
+          <div class="project-image">
+            <img
+              src="../images/catmeme.jfif"
+              alt="Portfolio Preview"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>PROJECT 2</h3>
+          <p>This portfolio website showcasing my projects in ITEC 101.</p>
+          <div class="project-image">
+            <img
+              src="../images/catmeme.jfif"
+              alt="Photography Preview"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>PROJECT 3</h3>
+          <p>This portfolio website showcasing my projects in ITEC 101.</p>
+          <div class="project-image">
+            <img
+              src="../images/catmeme.jfif"
+              alt="IT Projects Preview"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox for Projects -->
+    <div id="projectLightbox" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeProjectLightbox()">
+          &times;
+        </button>
+        <img
+          src=""
+          alt="Expanded project"
+          class="resume-img"
+          id="projectLightboxImage"
+        />
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="footer-content">
         <h3>CONNECT WITH ME</h3>
@@ -69,6 +125,26 @@
           nav.classList.remove("active");
         });
       });
+
+      // Project Lightbox Functions
+      function openLightbox(imageSrc) {
+        const lightbox = document.getElementById("projectLightbox");
+        const lightboxImage = document.getElementById("projectLightboxImage");
+        lightboxImage.src = imageSrc;
+        lightbox.style.display = "flex";
+      }
+
+      function closeProjectLightbox() {
+        document.getElementById("projectLightbox").style.display = "none";
+      }
+
+      // Close modals when clicking outside
+      window.onclick = function (event) {
+        const projectLightbox = document.getElementById("projectLightbox");
+        if (event.target == projectLightbox) {
+          projectLightbox.style.display = "none";
+        }
+      };
 
       let prevScrollPos = window.pageYOffset;
 
