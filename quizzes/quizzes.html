@@ -13,6 +13,10 @@
   </head>
 
   <body>
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+
     <div class="hamburger">
       <span></span>
       <span></span>
@@ -25,6 +29,11 @@
         <li><a href="../about/about.html">ABOUT</a></li>
         <li><a href="quizzes.html">QUIZZES</a></li>
         <li><a href="../projects/projects.html">PROJECTS</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
       </ul>
     </nav>
 
@@ -202,6 +211,29 @@
     </footer>
 
     <script>
+      // Theme Toggle Functionality
+      const themeToggles = document.querySelectorAll(".theme-toggle");
+      function updateThemeIcon(theme) {
+        document.querySelectorAll(".theme-toggle i").forEach((icon) => {
+          icon.className = theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+        });
+      }
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme) {
+        document.documentElement.setAttribute("data-theme", currentTheme);
+        updateThemeIcon(currentTheme);
+      }
+      themeToggles.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+          updateThemeIcon(newTheme);
+        });
+      });
+
       // Hamburger menu functionality
       const hamburger = document.querySelector(".hamburger");
       const nav = document.querySelector("nav ul");
