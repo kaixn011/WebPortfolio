@@ -464,7 +464,7 @@ h2 {
 }
 
 .footer h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin-bottom: 1.5rem;
   font-weight: bold;
   border-bottom: 1px solid #d8cbb3;
@@ -475,7 +475,7 @@ h2 {
 .footer-icons {
   display: flex;
   justify-content: center;
-  gap: 6rem;
+  gap: clamp(2rem, 6vw, 6rem);
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
 }
@@ -494,19 +494,70 @@ h2 {
 }
 
 .footer-icons i {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 4vw, 4rem);
   margin-bottom: 0.5rem;
 }
 
 .footer-icons p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
 }
 
 .copyright {
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
   color: #e8dfcf;
   margin-top: 1rem;
+}
+
+/* Mobile Footer Adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .footer-icons {
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-icons i {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-icons p {
+    font-size: 0.8rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+
+  .footer-icons {
+    gap: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-icons i {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .footer-icons p {
+    font-size: 0.7rem;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+  }
 }
 
 /* Responsive Styles */
